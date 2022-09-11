@@ -29,7 +29,14 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder. 
 
 ```dart
-const like = 'sample';
+TextArea(
+  borderColor: borderColor,
+  textEditingController: _controller.reasonTextController,
+  suffixIcon: Icons.attach_file_rounded,
+  onSuffixIconPressed: () => {_controller.pickAttachment()},
+  validation: _controller.reasonValidation.value,
+  errorText: 'Please type a reason!',
+);
 ```
 
 ## Additional information
