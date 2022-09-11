@@ -1,4 +1,6 @@
 
+![](lib/image/text_area_demo_image.png)
+
 ## Usage
 
 ```dart
