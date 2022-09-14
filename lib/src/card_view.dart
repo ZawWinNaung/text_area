@@ -6,11 +6,16 @@ class CardView extends StatelessWidget {
   final Color? background;
   final EdgeInsetsGeometry? padding;
 
-  CardView({this.child, this.borderRadius, this.background, this.padding});
+  const CardView({
+    Key? key,
+    this.child,
+    this.borderRadius,
+    this.background,
+    this.padding,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       padding: padding,
       decoration: BoxDecoration(
@@ -22,7 +27,7 @@ class CardView extends StatelessWidget {
           BoxShadow(
               color: Colors.grey.withOpacity(0.25),
               blurRadius: 12,
-              offset: Offset(6, 6),
+              offset: const Offset(6, 6),
               spreadRadius: 1),
         ],
       ),

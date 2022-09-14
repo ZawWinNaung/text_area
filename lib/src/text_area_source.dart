@@ -5,24 +5,24 @@ class TextArea extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
 
-  final TextEditingController textEditingController;
+  final TextEditingController? textEditingController;
   final IconData? suffixIcon;
-  final Function onSuffixIconPressed;
-  final Color borderColor;
+  final VoidCallback? onSuffixIconPressed;
+  final Color? borderColor;
   final double? borderRadius;
   final bool validation;
   final String? errorText;
-  final Key? key;
 
-  TextArea(
-      {required this.textEditingController,
-      this.suffixIcon,
-      required this.onSuffixIconPressed,
-      required this.borderColor,
-      this.borderRadius,
-      required this.validation,
-      this.errorText,
-      this.key});
+  const TextArea({
+    Key? key,
+    this.textEditingController,
+    this.suffixIcon,
+    this.onSuffixIconPressed,
+    this.borderColor,
+    this.borderRadius,
+    required this.validation,
+    this.errorText,
+  }) : super(key: key);
 }
 
 class _BodyState extends State<TextArea> {
@@ -83,7 +83,7 @@ class _BodyState extends State<TextArea> {
                       widget.suffixIcon,
                       color: const Color(0xFF0023DB),
                     ),
-                    onPressed: () => {widget.onSuffixIconPressed()},
+                    onPressed: widget.onSuffixIconPressed,
                   ),
                 ),
               ],
